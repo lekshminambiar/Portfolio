@@ -2320,6 +2320,10 @@ body:has(.slide.proj:not([hidden])) , .slide.proj{background:var(--butter)!impor
 html,body{overflow-x:hidden;max-width:100%}
 @supports (overflow:clip){html,body{overflow-x:clip}}
 @media(max-width:440px){.topbar nav{display:flex!important;flex-wrap:wrap;align-items:center;gap:8px 14px!important}.topbar nav a{margin:0!important;font-size:13.5px!important}.topbar nav a.tb-cta{padding:6px 12px!important}}
+
+/* v235: iPhone Safari widens the page to fit anything that overflows, so clip at the source */
+#app,.topbar,.env,#f-con,.hx.pfx{overflow-x:clip}
+.env-letter{max-width:100%}
 </style>
 
 <header class="topbar"><div class="wrap">
