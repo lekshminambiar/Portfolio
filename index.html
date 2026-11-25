@@ -2315,6 +2315,11 @@ body:has(.slide.proj:not([hidden])) , .slide.proj{background:var(--butter)!impor
 .env-flap{opacity:.8}
 .ab4-pol video{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;background:#ddd}.ab4-pol.p1{cursor:default}
 .env-front::after{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M52 54 Q56 74 49 93' stroke='%23E9D985' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Cg fill='%23E9D985'%3E%3Cpath d='M50 47 C43 41 34 34 35 25 C36 17 45 16 48.5 23 L50 26 L51.5 23 C55 16 64 17 65 25 C66 34 57 41 50 47Z' transform='rotate(45 50 50)'/%3E%3Cpath d='M50 47 C43 41 34 34 35 25 C36 17 45 16 48.5 23 L50 26 L51.5 23 C55 16 64 17 65 25 C66 34 57 41 50 47Z' transform='rotate(135 50 50)'/%3E%3Cpath d='M50 47 C43 41 34 34 35 25 C36 17 45 16 48.5 23 L50 26 L51.5 23 C55 16 64 17 65 25 C66 34 57 41 50 47Z' transform='rotate(225 50 50)'/%3E%3Cpath d='M50 47 C43 41 34 34 35 25 C36 17 45 16 48.5 23 L50 26 L51.5 23 C55 16 64 17 65 25 C66 34 57 41 50 47Z' transform='rotate(315 50 50)'/%3E%3Ccircle cx='50' cy='50' r='3'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat!important;width:66px!important;height:66px!important}
+
+/* v234: never scroll sideways; phone nav fits */
+html,body{overflow-x:hidden;max-width:100%}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+@media(max-width:440px){.topbar nav{display:flex!important;flex-wrap:wrap;align-items:center;gap:8px 14px!important}.topbar nav a{margin:0!important;font-size:13.5px!important}.topbar nav a.tb-cta{padding:6px 12px!important}}
 </style>
 
 <header class="topbar"><div class="wrap">
