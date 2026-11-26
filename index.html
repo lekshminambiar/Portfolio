@@ -2368,7 +2368,9 @@ html,body{overflow-x:hidden;max-width:100%}
 .pf-note .pfn-clip{position:absolute;left:1.6em;top:-1.6em;width:1.6em;z-index:2;fill:none;stroke:#B9CAEA;stroke-width:3.2;stroke-linecap:round;filter:drop-shadow(0 1px 1px rgba(20,10,0,.25))}
 .pf-note .pfn-tape{position:absolute;right:-.4em;top:-1.6em;z-index:2;width:3.6em;height:2.2em;background:rgba(239,225,149,.92);transform:rotate(4deg);display:grid;place-items:center;box-shadow:0 2px 5px -2px rgba(20,10,0,.3)}
 .pf-note .pfn-tape svg{width:1.3em;fill:#B9CAEA}
-.hx.pfx .pf-fly:not(.pf-fly2){left:-2.4%;margin-top:-2.5%}
+.hx.pfx .pf-fly:not(.pf-fly2){left:-2%;margin-top:-1%;width:21%}
+@media(min-width:601px){.hx.pfx .pf-fly.pf-fly2{width:21%;right:-2.6%;margin-top:-2.6%}}
+@media(max-width:600px){.hx.pfx .pf-fly:not(.pf-fly2),.hx.pfx .pf-fly.pf-fly2{width:24%}}
 @media(max-width:600px){.pf-note{left:4%;margin-top:-56%}.hx.pfx .pf-fly:not(.pf-fly2){left:-3%;margin-top:-13%}}
 .al-snd{display:none!important}
 .proj:not(#personalbrands) :is(img,video):not(.cs-av img):not(button img):not(a img){cursor:zoom-in!important}
