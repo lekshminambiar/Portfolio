@@ -3395,7 +3395,11 @@ document.addEventListener("mouseleave",hide);
 const stop=e=>{e.preventDefault();e.stopPropagation();clearTimeout(tT);tT=matchMedia("(hover:hover)").matches?0:setTimeout(hide,4000)};
 pp.addEventListener("click",e=>{stop(e);if(!cur)return;if(cur.paused){cur._up=false;const p=cur.play();if(p)p.catch(()=>{});}else{cur._up=true;cur.pause();}sync()});
 sd.addEventListener("click",e=>{stop(e);if(!cur)return;const on=cur.muted;document.querySelectorAll("video").forEach(x=>{if(x!==cur&&x.id!=="lbVid")x.muted=true});cur.muted=!on;if(on){cur.volume=1;if(cur.paused){cur._up=false;const p=cur.play();if(p)p.catch(()=>{});}}sync()});
-setInterval(()=>{if(cur)place()},400);})();
+setInterval(()=>{if(cur)place()},400);
+/* v240: only one video has sound at a time, and a video goes quiet once it leaves the screen */
+const solo=e=>{const v=e.target;if(!v||v.tagName!=="VIDEO"||v.muted||v.volume===0||v.paused&&e.type==="play")return;document.querySelectorAll("video").forEach(x=>{if(x!==v&&!x.muted)x.muted=true});};document.addEventListener("volumechange",solo,true);document.addEventListener("play",solo,true);
+if("IntersectionObserver" in window){const qo=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting&&!e.target.muted&&e.target.id!=="lbVid")e.target.muted=true;}),{threshold:0});document.querySelectorAll("video").forEach(v=>{if(v.id!=="lbVid")qo.observe(v)});}
+})();
 
 /* lazy media observer (v233) */
 (()=>{const vs=[...document.querySelectorAll("video")].filter(v=>v.dataset.lsrc||v.dataset.lposter||v.querySelector("source[data-lsrc]"));if(!("IntersectionObserver" in window)){vs.forEach(v=>{v._lzLoad();if("ap" in v.dataset)v.play().catch(()=>{})});return;}
